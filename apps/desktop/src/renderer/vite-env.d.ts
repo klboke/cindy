@@ -5269,6 +5269,11 @@ interface ElectronAPI {
       sessionId: string,
       ids: string[],
     ) => Promise<import('../shared/turnChangeSet').TurnChangeSetDetail[]>;
+    applyTurnChangeSet: (
+      sessionId: string,
+      id: string,
+      action: import('../shared/turnChangeSet').TurnChangeAction,
+    ) => Promise<import('../shared/turnChangeSet').TurnChangeActionResult>;
     onTurnChangeSetUpdated: (
       cb: (data: unknown, ownerStamp?: unknown) => void,
     ) => () => void;
